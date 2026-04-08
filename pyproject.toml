@@ -1,0 +1,7 @@
+[project]
+name = "splitwise-monthly"
+version = "0.1.0"
+description = "Auto-add monthly expenses to Splitwise"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
