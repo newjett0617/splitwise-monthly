@@ -4,4 +4,8 @@ version = "0.1.0"
 description = "Auto-add monthly expenses to Splitwise"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "httpx>=0.28.1",
+    "pydantic>=2.12.5",
+    "pydantic-settings>=2.13.1",
+]

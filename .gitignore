@@ -1,0 +1,14 @@
+# 環境變數（含機密資訊）
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.idea/
+
+# API spec（僅供本機參考）
+openapi.json

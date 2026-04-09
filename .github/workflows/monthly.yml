@@ -1,0 +1,26 @@
+name: Monthly Expenses
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"  # 每月 1 日 UTC 00:00（台灣時間 08:00）
+  workflow_dispatch:       # 支援手動觸發
+
+jobs:
+  add-expenses:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57 # v8.0.0
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Install Doppler CLI
+        uses: dopplerhq/cli-action@v4
+
+      - name: Run
+        run: doppler run -- uv run main.py
+        env:
+          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
