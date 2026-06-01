@@ -2,8 +2,9 @@ name: Monthly Expenses
 
 on:
   schedule:
-    - cron: "0 0 1 * *"  # 每月 1 日 UTC 00:00（台灣時間 08:00）
-  workflow_dispatch:       # 支援手動觸發
+    - cron: "0 8 1 * *"  # 每月 1 日 台灣時間 08:00
+      timezone: "Asia/Taipei"
+  workflow_dispatch:       # 手動觸發
 
 jobs:
   add-expenses:
